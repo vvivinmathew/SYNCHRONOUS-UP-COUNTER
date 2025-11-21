@@ -29,18 +29,33 @@ However, the remaining flip-flops should be made ready to toggle only when all l
 **Procedure**
 
 /* write all the steps invloved */
-
+~~~
 **PROGRAM**
-
+module de11(out,clk,rstn);
+input clk,rstn;
+output reg [3:0]out;
+always @ (posedge clk)
+begin
+   if(!rstn)
+     out<=0;
+   else 
+     out <= out+1;
+end
+endmodule
 /* Program for flipflops and verify its truth table in quartus using Verilog programming. 
 
-Developed by: RegisterNumber:
+Developed by: R Raihaan Ahmed 
+RegisterNumber:24010543
 */
-
+~~~
 **RTL LOGIC UP COUNTER**
+![Screenshot 2024-12-03 180816](https://github.com/user-attachments/assets/dcdcebed-6fa5-4efe-a290-1a86c5e34ce0)
 
 **TIMING DIAGRAM FOR IP COUNTER**
+![Screenshot 2024-12-03 181730](https://github.com/user-attachments/assets/94974c70-191d-47c3-9e15-2eabbdf6fa35)
 
 **TRUTH TABLE**
+![Screenshot 2024-12-03 182332](https://github.com/user-attachments/assets/48bea7a8-2702-4ade-ae8d-4c98e64f1db4)
 
 **RESULTS**
+The 4-bit synchronous up-counter was successfully implemented using Verilog in Quartus Prime. The functionality was validated by simulating the counter, which correctly counted up from 0000 to 1111 in binary, incrementing by 1 on each clock pulse. The synchronous nature of the counter ensured that all flip-flops were clocked simultaneously, with each flip-flop toggling based on the state of the preceding flip-flops. The output sequence followed the expected counting pattern, confirming the correct operation of the 4-bit synchronous up-counter.
